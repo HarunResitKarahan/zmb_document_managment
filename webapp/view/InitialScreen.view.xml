@@ -70,7 +70,7 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <table:Table
+            <table:TreeTable
                 selectionMode="MultiToggle"
                 rows="{jsonModel>/documentListSet}"
                 alternateRowColors="true"
@@ -102,23 +102,25 @@
                     </OverflowToolbar>
                 </table:extension>
                 <table:columns>
-                    <table:Column width="2.2rem">
-                        <!-- <Label class="fontSapIcon" text="&#xe03a;" /> -->
+                    <!-- <table:Column width="4.4rem">
                         <Label text="" />
                         <table:template>
                             <core:Icon src="{jsonModel>iconSrc}" />
                         </table:template>
-                    </table:Column>
+                    </table:Column> -->
                     <table:Column
                         width="auto"
                         sortProperty="fileName"
                     >
                         <Label text="{i18n>document-name}" />
                         <table:template>
-                            <Text
-                                text="{jsonModel>fileName}"
-                                wrapping="false"
-                            />
+                            <FlexBox>
+                                <core:Icon class="sapUiTinyMarginBegin sapUiSmallMarginEnd" src="{jsonModel>iconSrc}" />
+                                <Text
+                                    text="{jsonModel>fileName}"
+                                    wrapping="false"
+                                />
+                            </FlexBox>
                         </table:template>
                     </table:Column>
                     <table:Column
@@ -146,12 +148,34 @@
                         </table:template>
                     </table:Column>
                     <table:Column
+                        width="12rem"
+                        hAlign="Center"
+                    >
+                        <Label text="{i18n>status}" />
+                        <table:template>
+                            <ObjectStatus
+                                text="{
+                                    path: 'jsonModel>status',
+                                    formatter: '.formatter.setStatusText'
+                                }"
+                                icon="{
+                                    path: 'jsonModel>status',
+                                    formatter: '.formatter.setStatusIcon'
+                                }"
+                                state="{
+                                    path: 'jsonModel>status',
+                                    formatter: '.formatter.setStatusState'
+                                }"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column
                         width="5rem"
                         hAlign="Center"
                     >
                         <Label text="{i18n>exclude}" />
                         <table:template>
-                            <CheckBox />
+                            <CheckBox enabled="{= ${jsonModel>status} === '02'}" />
                         </table:template>
                     </table:Column>
                     <table:Column
@@ -176,14 +200,14 @@
                         />
                     </OverflowToolbar>
                 </table:footer> -->
-            </table:Table>
+            </table:TreeTable>
         </f:content>
         <f:footer>
             <OverflowToolbar
                 design="Info"
                 enabled="false"
             >
-            <ToolbarSpacer />
+                <ToolbarSpacer />
                 <Button
                     text="{i18n>path-list-add}"
                     type="Emphasized"

@@ -74,224 +74,300 @@ sap.ui.define([
                 return [
                     {
                         key: "1",
-                        fileName: "HR Döküman 1",
-                        iconSrc: 'sap-icon://pdf-attachment',
-                        fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        fileName: "HR Dosya 1",
+                        iconSrc: 'sap-icon://open-folder',
+                        uploadedBy: "HAKARAHAN",
+                        nodes: [{
+                            key: "2",
+                            fileName: "HR Alt Dosya 1",
+                            iconSrc: 'sap-icon://open-folder',
+                            fileType: ".xls",
+                            uploadedBy: "HAKARAHAN",
+                            nodes: [
+                                {
+                                    key: "2",
+                                    fileName: "HR Alt Döküman 1-1",
+                                    iconSrc: 'sap-icon://excel-attachment',
+                                    fileType: ".xls",
+                                    uploadedBy: "HAKARAHAN",
+                                    status: '01'
+                                }
+                            ],
+                            status: '01'
+                        }, {
+                            key: "2",
+                            fileName: "HR Alt Döküman 1",
+                            iconSrc: 'sap-icon://excel-attachment',
+                            fileType: ".xls",
+                            uploadedBy: "HAKARAHAN",
+                            status: '01'
+                        }]
                     },
                     {
-                        key: "2",
-                        fileName: "HR Döküman 2",
-                        iconSrc: 'sap-icon://excel-attachment',
-                        fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        key: "1",
+                        fileName: "HR Dosya 2",
+                        iconSrc: 'sap-icon://open-folder',
+                        uploadedBy: "HAKARAHAN",
+                        nodes: [{
+                            key: "2",
+                            fileName: "HR Alt Dosya 2",
+                            iconSrc: 'sap-icon://open-folder',
+                            uploadedBy: "HAKARAHAN",
+                            nodes: [
+                                {
+                                    key: "2",
+                                    fileName: "HR Alt Döküman 2-2",
+                                    iconSrc: 'sap-icon://excel-attachment',
+                                    fileType: ".xls",
+                                    uploadedBy: "HAKARAHAN",
+                                    status: '02'
+                                }
+                            ]
+                        }, {
+                            key: "2",
+                            fileName: "HR Alt Döküman 2",
+                            iconSrc: 'sap-icon://excel-attachment',
+                            fileType: ".xls",
+                            uploadedBy: "HAKARAHAN",
+                            status: '03'
+                        }]
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '03'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '03'
                     },
                     {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '03'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
-                    },{
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
+                    }, {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '01'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '01'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
-                    },{
+                        uploadedBy: "HAKARAHAN",
+                        status: '01'
+                    }, {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '01'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '01'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '01'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
-                    },{
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
+                    }, {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
-                    },{
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
+                    }, {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
-                    },{
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
+                    }, {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
-                    },{
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
+                    }, {
                         key: "1",
                         fileName: "HR Döküman 1",
                         iconSrc: 'sap-icon://pdf-attachment',
                         fileType: ".pdf",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "2",
                         fileName: "HR Döküman 2",
                         iconSrc: 'sap-icon://excel-attachment',
                         fileType: ".xls",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "3",
                         fileName: "HR Döküman 3",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                     {
                         key: "4",
                         fileName: "HR Döküman 4",
                         iconSrc: 'sap-icon://doc-attachment',
                         fileType: ".doc",
-                        uploadedBy: "HAKARAHAN"
+                        uploadedBy: "HAKARAHAN",
+                        status: '02'
                     },
                 ]
             }
-            
+
         };
     });
