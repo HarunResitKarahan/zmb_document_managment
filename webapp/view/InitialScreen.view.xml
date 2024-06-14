@@ -1,0 +1,201 @@
+<mvc:View
+    controllerName="com.martur.zmbdocumentmanagment.controller.InitialScreen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:vm="sap.ui.comp.variants"
+    xmlns:table="sap.ui.table"
+>
+    <f:DynamicPage showFooter="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <vm:VariantManagement standardItemText="{i18n>standart}" />
+                </f:heading>
+                <!-- <f:actions>
+                    <ToolbarSpacer />
+                    <Button
+                        text="{i18n>path-list-add}"
+                        type="Accept"
+                        icon="sap-icon://request"
+                        iconFirst="false"
+                    />
+                </f:actions> -->
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                        useToolbar="false"
+                        showFilterConfiguration="false"
+                    >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem
+                                name="documentName"
+                                label="{i18n>document-name}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <Select />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem
+                                name="documentType"
+                                label="{i18n>document-type}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        suggestionItems="{
+                                            path: 'jsonModel>/documentNameSearchHelpSet'
+                                        }"
+                                        showValueHelp="false"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                    </MultiInput>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <table:Table
+                selectionMode="MultiToggle"
+                rows="{jsonModel>/documentListSet}"
+                alternateRowColors="true"
+                visibleRowCountMode="Auto"
+            >
+                <table:extension>
+                    <OverflowToolbar style="Clear">
+                        <Title text="{i18n>files} ({= ${jsonModel>/documentListSet}.length})" />
+                        <ToolbarSpacer />
+                        <Button
+                            icon="sap-icon://sorting-ranking"
+                            tooltip="Sort ascending across Categories and Name"
+                            press="sortCategoriesAndName"
+                        />
+                        <Button
+                            icon="sap-icon://sort"
+                            tooltip="Sort Categories in addition to current sorting"
+                            press="sortCategories"
+                        />
+                        <Button
+                            icon="sap-icon://decline"
+                            tooltip="Clear all filters"
+                            press="clearAllFilters"
+                        />
+                        <SearchField
+                            placeholder="{i18n>search---}"
+                            width="15rem"
+                        />
+                    </OverflowToolbar>
+                </table:extension>
+                <table:columns>
+                    <table:Column width="2.2rem">
+                        <!-- <Label class="fontSapIcon" text="&#xe03a;" /> -->
+                        <Label text="" />
+                        <table:template>
+                            <core:Icon src="{jsonModel>iconSrc}" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column
+                        width="auto"
+                        sortProperty="fileName"
+                    >
+                        <Label text="{i18n>document-name}" />
+                        <table:template>
+                            <Text
+                                text="{jsonModel>fileName}"
+                                wrapping="false"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column
+                        width="auto"
+                        sortProperty="fileType"
+                    >
+                        <Label text="{i18n>document-type}" />
+                        <table:template>
+                            <Text
+                                text="{jsonModel>fileType}"
+                                wrapping="false"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column
+                        width="auto"
+                        sortProperty="uploadedBy"
+                    >
+                        <Label text="{i18n>uploadedBy}" />
+                        <table:template>
+                            <Text
+                                text="{jsonModel>uploadedBy}"
+                                wrapping="false"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column
+                        width="5rem"
+                        hAlign="Center"
+                    >
+                        <Label text="{i18n>exclude}" />
+                        <table:template>
+                            <CheckBox />
+                        </table:template>
+                    </table:Column>
+                    <table:Column
+                        width="5rem"
+                        hAlign="Center"
+                    >
+                        <Label text="" />
+                        <table:template>
+                            <Button
+                                icon="sap-icon://download"
+                                type="Ghost"
+                            />
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+                <!-- <table:footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <Button
+                            text="Kaydet"
+                            icon="sap-icon://accept"
+                        />
+                    </OverflowToolbar>
+                </table:footer> -->
+            </table:Table>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar
+                design="Info"
+                enabled="false"
+            >
+            <ToolbarSpacer />
+                <Button
+                    text="{i18n>path-list-add}"
+                    type="Emphasized"
+                    icon="sap-icon://request"
+                />
+                <ToolbarSpacer />
+                <Button
+                    text="Kaydet"
+                    icon="sap-icon://save"
+                    type="Accept"
+                />
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>
