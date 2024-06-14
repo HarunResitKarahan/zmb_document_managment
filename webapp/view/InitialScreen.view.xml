@@ -142,6 +142,8 @@
                     </table:Column> -->
                     <table:Column
                         width="auto"
+                        minWidth="235"
+                        autoResizable="true"
                         sortProperty="fileName"
                         filterProperty="fileName"
                         filterOperator="Contains"
@@ -162,6 +164,7 @@
                     </table:Column>
                     <table:Column
                         width="auto"
+                        autoResizable="true"
                         sortProperty="fileType"
                     >
                         <Label text="{i18n>document-type}" />
@@ -174,6 +177,7 @@
                     </table:Column>
                     <table:Column
                         width="auto"
+                        autoResizable="true"
                         sortProperty="uploadedBy"
                     >
                         <Label text="{i18n>uploadedBy}" />
@@ -186,6 +190,7 @@
                     </table:Column>
                     <table:Column
                         width="12rem"
+                        autoResizable="true"
                         hAlign="Center"
                         sortProperty="status"
                     >
@@ -209,6 +214,7 @@
                     </table:Column>
                     <table:Column
                         width="5rem"
+                        autoResizable="true"
                         hAlign="Center"
                     >
                         <Label text="{i18n>exclude}" />
@@ -218,6 +224,7 @@
                     </table:Column>
                     <table:Column
                         width="5rem"
+                        autoResizable="true"
                         hAlign="Center"
                     >
                         <Label text="" />
