@@ -41,7 +41,12 @@
                                 visibleInFilterBar="true"
                             >
                                 <fb:control>
-                                    <Select />
+                                    <Input
+                                        valueHelpOnly="true"
+                                        valueHelpIconSrc="sap-icon://curriculum"
+                                        showValueHelp="true"
+                                        valueHelpRequest="_openInputTableValueHelp('vDialogDocumentNameFilter')"
+                                    />
                                 </fb:control>
                             </fb:FilterGroupItem>
                             <fb:FilterGroupItem
@@ -53,7 +58,7 @@
                                 <fb:control>
                                     <MultiInput
                                         suggestionItems="{
-                                            path: 'jsonModel>/documentNameSearchHelpSet'
+                                            path: 'jsonModel>/documentTypeSearchHelpSet'
                                         }"
                                         showValueHelp="false"
                                         startSuggestion="0"
@@ -74,7 +79,7 @@
                                 <fb:control>
                                     <MultiInput
                                         suggestionItems="{
-                                            path: 'jsonModel>/documentTypeSearchHelpSet'
+                                            path: 'jsonModel>/documentStatusSearchHelpSet'
                                         }"
                                         showValueHelp="false"
                                         showSuggestion="true"
@@ -246,7 +251,7 @@
                     </OverflowToolbar>
                 </table:footer> -->
                 <table:noData>
-                    <IllustratedMessage/>
+                    <IllustratedMessage />
                 </table:noData>
             </table:TreeTable>
         </f:content>

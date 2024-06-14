@@ -25,13 +25,13 @@ sap.ui.define([
                     busy: true,
                     today: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`,
                     todayJS: today,
-                    documentNameSearchHelpSet: this._filterInputDocumentNameSearchHelpData(),
                     documentTypeSearchHelpSet: this._filterInputDocumentTypeSearchHelpData(),
+                    documentStatusSearchHelpSet: this._filterInputDocumentStatusSearchHelpData(),
                     documentListSet: this._documentsListSet(),
                 });
                 return oModel;
             },
-            _filterInputDocumentTypeSearchHelpData: function () {
+            _filterInputDocumentStatusSearchHelpData: function () {
                 return [
                     {
                         key: "1",
@@ -50,7 +50,7 @@ sap.ui.define([
                     },
                 ]
             },
-            _filterInputDocumentNameSearchHelpData: function () {
+            _filterInputDocumentTypeSearchHelpData: function () {
                 return [
                     {
                         key: "1",
