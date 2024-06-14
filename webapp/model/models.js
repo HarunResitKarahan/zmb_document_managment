@@ -26,9 +26,29 @@ sap.ui.define([
                     today: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`,
                     todayJS: today,
                     documentNameSearchHelpSet: this._filterInputDocumentNameSearchHelpData(),
+                    documentTypeSearchHelpSet: this._filterInputDocumentTypeSearchHelpData(),
                     documentListSet: this._documentsListSet(),
                 });
                 return oModel;
+            },
+            _filterInputDocumentTypeSearchHelpData: function () {
+                return [
+                    {
+                        key: "1",
+                        value: "Sisteme Taşınıyor",
+                        iconSrc: 'sap-icon://in-progress'
+                    },
+                    {
+                        key: "2",
+                        value: "Sistemde Mevcut",
+                        iconSrc: "sap-icon://message-success"
+                    },
+                    {
+                        key: "3",
+                        value: "Sisteme Taşınmadı",
+                        iconSrc: 'sap-icon://message-error'
+                    },
+                ]
             },
             _filterInputDocumentNameSearchHelpData: function () {
                 return [

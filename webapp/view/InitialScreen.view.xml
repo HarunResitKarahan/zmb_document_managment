@@ -56,11 +56,41 @@
                                             path: 'jsonModel>/documentNameSearchHelpSet'
                                         }"
                                         showValueHelp="false"
+                                        startSuggestion="0"
                                     >
                                         <core:Item
                                             key="{jsonModel>key}"
                                             text="{jsonModel>value}"
                                         />
+                                    </MultiInput>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem
+                                name="documentStatus"
+                                label="{i18n>documentStatus}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        suggestionItems="{
+                                            path: 'jsonModel>/documentTypeSearchHelpSet'
+                                        }"
+                                        showValueHelp="false"
+                                        showSuggestion="true"
+                                        maxTokens="3"
+                                        startSuggestion="0"
+                                    >
+                                        <core:Item
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                        />
+                                        <!-- <MenuItem key="{jsonModel>key}" text="{jsonModel>value}" icon="{jsonModel>iconSrc}" ></MenuItem> -->
+                                        <!-- <core:ListItem
+                                            key="{jsonModel>key}"
+                                            text="{jsonModel>value}"
+                                            icon="{jsonModel>iconSrc}"
+                                        /> -->
                                     </MultiInput>
                                 </fb:control>
                             </fb:FilterGroupItem>
@@ -113,11 +143,16 @@
                     <table:Column
                         width="auto"
                         sortProperty="fileName"
+                        filterProperty="fileName"
+                        filterOperator="Contains"
                     >
                         <Label text="{i18n>document-name}" />
                         <table:template>
                             <FlexBox>
-                                <core:Icon class="sapUiTinyMarginBegin sapUiSmallMarginEnd" src="{jsonModel>iconSrc}" />
+                                <core:Icon
+                                    class="sapUiTinyMarginBegin sapUiSmallMarginEnd"
+                                    src="{jsonModel>iconSrc}"
+                                />
                                 <Text
                                     text="{jsonModel>fileName}"
                                     wrapping="false"
@@ -152,6 +187,7 @@
                     <table:Column
                         width="12rem"
                         hAlign="Center"
+                        sortProperty="status"
                     >
                         <Label text="{i18n>status}" />
                         <table:template>
@@ -203,7 +239,7 @@
                     </OverflowToolbar>
                 </table:footer> -->
                 <table:noData>
-                    <IllustratedMessage ></IllustratedMessage>
+                    <IllustratedMessage/>
                 </table:noData>
             </table:TreeTable>
         </f:content>
