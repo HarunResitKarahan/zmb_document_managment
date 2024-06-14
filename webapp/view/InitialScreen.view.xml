@@ -81,23 +81,25 @@
                         <Title text="{i18n>files} ({= ${jsonModel>/documentListSet}.length})" />
                         <ToolbarSpacer />
                         <Button
-                            icon="sap-icon://sorting-ranking"
-                            tooltip="Sort ascending across Categories and Name"
-                            press="sortCategoriesAndName"
-                        />
-                        <Button
-                            icon="sap-icon://sort"
-                            tooltip="Sort Categories in addition to current sorting"
-                            press="sortCategories"
-                        />
-                        <Button
                             icon="sap-icon://decline"
-                            tooltip="Clear all filters"
-                            press="clearAllFilters"
+                            text="{i18n>unselectAll}"
+                            tooltip="{i18n>unselectAll}"
+                            type="Ghost"
                         />
                         <SearchField
                             placeholder="{i18n>search---}"
                             width="15rem"
+                        />
+                        <Button
+                            icon="sap-icon://sort"
+                            tooltip="{i18n>sorting}"
+                            type="Ghost"
+                            press="_openDialog('vDialogDocumentSort')"
+                        />
+                        <Button
+                            icon="sap-icon://refresh"
+                            tooltip="{i18n>refresh}"
+                            type="Ghost"
                         />
                     </OverflowToolbar>
                 </table:extension>
@@ -200,6 +202,9 @@
                         />
                     </OverflowToolbar>
                 </table:footer> -->
+                <table:noData>
+                    <IllustratedMessage ></IllustratedMessage>
+                </table:noData>
             </table:TreeTable>
         </f:content>
         <f:footer>
@@ -215,7 +220,7 @@
                 />
                 <ToolbarSpacer />
                 <Button
-                    text="Kaydet"
+                    text="{i18n>save}"
                     icon="sap-icon://save"
                     type="Accept"
                 />

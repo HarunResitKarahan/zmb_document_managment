@@ -117,14 +117,12 @@
                 "initialScreen": {
                     "viewName": "InitialScreen",
                     "viewId": "initialScreen",
-                    "viewLevel": 1,
-                    "title": "{i18n>initialScreenViewTitle}"
+                    "viewLevel": 1
                 },
                 "object": {
                     "viewName": "Object",
                     "viewId": "object",
-                    "viewLevel": 2,
-                    "title": "{i18n>objectViewTitle}"
+                    "viewLevel": 2
                 },
                 "notFound": {
                     "viewName": "NotFound",
