@@ -8,7 +8,9 @@
         title="{i18n>document-name}"
         ok="._closeDialog"
         cancel="._closeDialog"
-        supportRanges="true"
+        supportRanges="false"
+        showHeader="false"
+        stretch="true"
         key="key"
         descriptionKey="fileName"
     >
@@ -45,16 +47,6 @@
                                     </m:ColumnListItem>
                                 </m:suggestionRows> -->
                             </m:Input>
-                        </fb:control>
-                    </fb:FilterGroupItem>
-                    <fb:FilterGroupItem
-                        groupName="__$INTERNAL$"
-                        name="ProductName"
-                        label="Product Name"
-                        visibleInFilterBar="true"
-                    >
-                        <fb:control>
-                            <m:Input name="ProductName" />
                         </fb:control>
                     </fb:FilterGroupItem>
                 </fb:filterGroupItems>

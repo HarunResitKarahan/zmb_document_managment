@@ -181,7 +181,7 @@
                         </table:template>
                     </table:Column>
                     <table:Column
-                        width="auto"
+                        width="8rem"
                         autoResizable="true"
                         sortProperty="uploadedBy"
                     >

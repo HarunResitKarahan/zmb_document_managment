@@ -76,8 +76,8 @@ sap.ui.define([
                         }]);
 
                         // Set Basic Search for FilterBar
-                        oFilterBar.setFilterBarExpanded(false);
-                        oFilterBar.setBasicSearch(this._oBasicSearchField);
+                        oFilterBar.setFilterBarExpanded(true);
+                        // oFilterBar.setBasicSearch(this._oBasicSearchField);
 
                         // Trigger filter bar search when the basic search is fired
                         this._oBasicSearchField.attachSearch(function () {
@@ -99,13 +99,13 @@ sap.ui.define([
                                         }
                                     }
                                 });
-                                oColumnProductCode = new UIColumn({ label: new Label({ text: "Döküman No" }), template: new Text({ wrapping: false, text: "{ProductCode}" }) });
+                                oColumnProductCode = new UIColumn({ label: new Label({ text: "Döküman No" }), template: new Text({ wrapping: false, text: "{jsonModel>key}" }) });
                                 oColumnProductCode.data({
-                                    fieldName: "key"
+                                    fieldName: "jsonModel>key"
                                 });
-                                oColumnProductName = new UIColumn({ label: new Label({ text: "Döküman Ad" }), template: new Text({ wrapping: false, text: "{ProductName}" }) });
+                                oColumnProductName = new UIColumn({ label: new Label({ text: "Döküman Ad" }), template: new Text({ wrapping: false, text: "{jsonModel>/fileName}" }) });
                                 oColumnProductName.data({
-                                    fieldName: "displayName"
+                                    fieldName: "jsonModel>fileName"
                                 });
                                 oTable.addColumn(oColumnProductCode);
                                 oTable.addColumn(oColumnProductName);
@@ -117,7 +117,7 @@ sap.ui.define([
                                 oTable.bindAggregation("items", {
                                     path: "/documentListSet",
                                     template: new ColumnListItem({
-                                        cells: [new Label({ text: "{key}" }), new Label({ text: "{displayName}" })]
+                                        cells: [new Label({ text: "{key}" }), new Label({ text: "{fileName}" })]
                                     }),
                                     events: {
                                         dataReceived: function () {
