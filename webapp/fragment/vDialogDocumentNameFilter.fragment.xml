@@ -1,4 +1,4 @@
-<core:FragmentDefinition xmlns:table="sap.ui.table"
+<core:FragmentDefinition
     xmlns="sap.ui.comp.valuehelpdialog"
     xmlns:m="sap.m"
     xmlns:fb="sap.ui.comp.filterbar"
@@ -6,18 +6,20 @@
 >
     <ValueHelpDialog
         title="{i18n>document-name}"
-        ok="._closeDialog"
+        ok=".onDocumentNameValueHelpOkPress"
         cancel="._closeDialog"
         supportRanges="false"
-        showHeader="false"
+        supportMultiselect="false"
+        filterMode="false"
         stretch="true"
+        escapeHandler="._closeDialog"
         key="key"
         descriptionKey="fileName"
     >
         <filterBar>
             <fb:FilterBar
-                advancedMode="false"
-                search=".onFilterBarSearch"
+                advancedMode="true"
+                search=".onDocumentNameFilterBarSearch"
                 isRunningInValueHelpDialog="true"
             >
                 <fb:filterGroupItems>
@@ -25,7 +27,7 @@
                         groupName="__$INTERNAL$"
                         name="documentName"
                         label="{i18n>document-name}"
-                        visibleInFilterBar="true"
+                        visibleInFilterBar="false"
                     >
                         <fb:control>
                             <m:Input

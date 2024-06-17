@@ -27,9 +27,15 @@ sap.ui.define([
                     todayJS: today,
                     documentTypeSearchHelpSet: this._filterInputDocumentTypeSearchHelpData(),
                     documentStatusSearchHelpSet: this._filterInputDocumentStatusSearchHelpData(),
+                    filterInputValues: this._filterInputValues(),
                     documentListSet: this._documentsListSet(),
                 });
                 return oModel;
+            },
+            _filterInputValues: function () {
+                return {
+                    documentName: ""
+                }
             },
             _filterInputDocumentStatusSearchHelpData: function () {
                 return [
