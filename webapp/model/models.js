@@ -28,13 +28,19 @@ sap.ui.define([
                     documentTypeSearchHelpSet: this._filterInputDocumentTypeSearchHelpData(),
                     documentStatusSearchHelpSet: this._filterInputDocumentStatusSearchHelpData(),
                     filterInputValues: this._filterInputValues(),
-                    documentListSet: this._documentsListSet(),
+                    filterInputConfigurations: this._filterInputConfigurations(),
+                    documentListSet: [],
                 });
                 return oModel;
             },
             _filterInputValues: function () {
                 return {
                     documentName: ""
+                }
+            },
+            _filterInputConfigurations: function () {
+                return {
+                    secondFilterBarVisibility: false
                 }
             },
             _filterInputDocumentStatusSearchHelpData: function () {

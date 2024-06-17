@@ -32,15 +32,20 @@
                     <fb:FilterBar
                         useToolbar="false"
                         showFilterConfiguration="false"
+                        showGoOnFB="false"
                     >
                         <fb:filterGroupItems>
                             <fb:FilterGroupItem
                                 name="filePath"
+                                label="{i18n>filePath}"
                                 groupName="pathGroup1"
-                                groupTitle="Title"
+                                visibleInFilterBar="true"
                             >
                                 <fb:control>
-                                    <Input
+                                    <MultiInput
+                                        id="idFilterBarFilePathMultiInput"
+                                        tokenUpdate="onFilterBarFilePathMultiInputChange"
+                                        showValueHelp="false"
                                     />
                                 </fb:control>
                             </fb:FilterGroupItem>
@@ -49,6 +54,7 @@
                     <fb:FilterBar
                         useToolbar="false"
                         showFilterConfiguration="false"
+                        visible="{jsonModel>/filterInputConfigurations/secondFilterBarVisibility}"
                     >
                         <fb:filterGroupItems>
                             <fb:FilterGroupItem

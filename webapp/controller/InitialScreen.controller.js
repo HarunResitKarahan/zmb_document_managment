@@ -1,8 +1,8 @@
 sap.ui.define(
   [
     "./BaseController",
-    "sap/ui/model/json/JSONModel",
     "../model/formatter",
+    "../model/models",
     "sap/ui/core/Fragment",
     "sap/m/Label",
     "sap/ui/model/Filter",
@@ -14,11 +14,12 @@ sap.ui.define(
     "sap/m/SearchField",
     "sap/m/Column",
     "sap/m/Text",
+    'sap/m/Token'
   ],
   function (
     BaseController,
-    JSONModel,
     formatter,
+    models,
     Fragment,
     Label,
     Filter,
@@ -29,7 +30,8 @@ sap.ui.define(
     ColumnListItem,
     SearchField,
     MColumn,
-    Text
+    Text,
+    Token
   ) {
     "use strict";
 
@@ -37,7 +39,14 @@ sap.ui.define(
       "com.martur.zmbdocumentmanagment.controller.InitialScreen",
       {
         formatter: formatter,
-        onInit: function () {},
+        models: models,
+        onInit: function () {
+          var oFilePathMultiInput = this.getView().byId(
+            "idFilterBarFilePathMultiInput"
+          );
+
+          oFilePathMultiInput.addValidator(this._filePathValidator);
+        },
         _openDialog: function (dialogName) {
           if (!this._oDialog) {
             Fragment.load({
@@ -251,6 +260,19 @@ sap.ui.define(
             oBinding.filter([oFilter]);
           }
         },
+        _filePathValidator: function (args) {
+          var text = args.text;
+
+          return new Token({ key: text, text: text });
+        },
+        onFilterBarFilePathMultiInputChange: function (oEvent) {
+          let oTokens = oEvent.getSource().getTokens(),
+          jsonModel = this.getModel("jsonModel");
+          if (oTokens.length > 0) {
+            jsonModel.setProperty("/filterInputConfigurations/secondFilterBarVisibility", true);
+            jsonModel.setProperty("/documentListSet", models._documentsListSet());
+          }
+        }
       }
     );
   }
