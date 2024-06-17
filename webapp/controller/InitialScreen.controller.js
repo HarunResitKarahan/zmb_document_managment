@@ -45,7 +45,7 @@ sap.ui.define(
             "idFilterBarFilePathMultiInput"
           );
 
-          oFilePathMultiInput.addValidator(this._filePathValidator);
+          oFilePathMultiInput.addValidator(this._filePathValidator.bind(this));
         },
         _openDialog: function (dialogName) {
           if (!this._oDialog) {
@@ -261,8 +261,15 @@ sap.ui.define(
           }
         },
         _filePathValidator: function (args) {
-          var text = args.text;
+          var text = args.text,
+           i18n = this.getOwnerComponent().getModel("i18n");
 
+          if (!this.isValidFilePath(text)) {
+            this.getView().byId("idFilterBarFilePathMultiInput").setValueState("Warning")
+            this.getView().byId("idFilterBarFilePathMultiInput").setValueStateText(i18n.getProperty("filterBarFilePathStateText"))
+            return;
+          }
+          this.getView().byId("idFilterBarFilePathMultiInput").setValueState("None")
           return new Token({ key: text, text: text });
         },
         onFilterBarFilePathMultiInputChange: function (oEvent) {
@@ -277,9 +284,8 @@ sap.ui.define(
                 false
               );
               jsonModel.setProperty("/documentListSet", []);
-
-              return;
             }
+            return;
           }
           if (oTokens.length > 0) {
             jsonModel.setProperty(
