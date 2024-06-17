@@ -25,6 +25,7 @@ sap.ui.define([
                     busy: true,
                     today: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`,
                     todayJS: today,
+                    documentTreeTableBusy: false,
                     documentTypeSearchHelpSet: this._filterInputDocumentTypeSearchHelpData(),
                     documentStatusSearchHelpSet: this._filterInputDocumentStatusSearchHelpData(),
                     filterInputValues: this._filterInputValues(),

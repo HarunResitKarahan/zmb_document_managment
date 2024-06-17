@@ -262,19 +262,28 @@ sap.ui.define(
         },
         _filePathValidator: function (args) {
           var text = args.text,
-           i18n = this.getOwnerComponent().getModel("i18n");
+            i18n = this.getOwnerComponent().getModel("i18n");
 
           if (!this.isValidFilePath(text)) {
-            this.getView().byId("idFilterBarFilePathMultiInput").setValueState("Warning")
-            this.getView().byId("idFilterBarFilePathMultiInput").setValueStateText(i18n.getProperty("filterBarFilePathStateText"))
+            this.getView()
+              .byId("idFilterBarFilePathMultiInput")
+              .setValueState("Warning");
+            this.getView()
+              .byId("idFilterBarFilePathMultiInput")
+              .setValueStateText(
+                i18n.getProperty("filterBarFilePathStateText")
+              );
             return;
           }
-          this.getView().byId("idFilterBarFilePathMultiInput").setValueState("None")
+          this.getView()
+            .byId("idFilterBarFilePathMultiInput")
+            .setValueState("None");
           return new Token({ key: text, text: text });
         },
         onFilterBarFilePathMultiInputChange: function (oEvent) {
           let oTokens = oEvent.getSource().getTokens(),
             jsonModel = this.getModel("jsonModel");
+            this.getView().byId("idDocumentTreeTable").setBusy(true)
           if (oEvent.getParameter("type") === "removed") {
             if (
               oEvent.getParameter("removedTokens").length === oTokens.length
@@ -284,6 +293,8 @@ sap.ui.define(
                 false
               );
               jsonModel.setProperty("/documentListSet", []);
+
+              this.getView().byId("idDocumentTreeTable").setBusy(false)
             }
             return;
           }
@@ -296,6 +307,7 @@ sap.ui.define(
               "/documentListSet",
               models._documentsListSet()
             );
+            this.getView().byId("idDocumentTreeTable").setBusy(false)
           }
         },
       }

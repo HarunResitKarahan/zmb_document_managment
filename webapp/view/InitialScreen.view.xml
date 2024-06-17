@@ -133,6 +133,7 @@
                 id="idDocumentTreeTable"
                 selectionMode="MultiToggle"
                 rows="{jsonModel>/documentListSet}"
+                busy="{jsonModel>/documentTreeTableBusy}"
                 alternateRowColors="true"
                 visibleRowCountMode="Auto"
             >
@@ -287,11 +288,11 @@
                 enabled="false"
             >
                 <ToolbarSpacer />
-                <Button
+                <!-- <Button
                     text="{i18n>path-list-add}"
                     type="Emphasized"
                     icon="sap-icon://request"
-                />
+                /> -->
                 <ToolbarSpacer />
                 <Button
                     text="{i18n>save}"
