@@ -35,6 +35,23 @@
                     >
                         <fb:filterGroupItems>
                             <fb:FilterGroupItem
+                                name="filePath"
+                                groupName="pathGroup1"
+                                groupTitle="Title"
+                            >
+                                <fb:control>
+                                    <Input
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                    <fb:FilterBar
+                        useToolbar="false"
+                        showFilterConfiguration="false"
+                    >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem
                                 name="documentName"
                                 label="{i18n>document-name}"
                                 groupName="Group1"
@@ -107,6 +124,7 @@
         </f:header>
         <f:content>
             <table:TreeTable
+                id="idDocumentTreeTable"
                 selectionMode="MultiToggle"
                 rows="{jsonModel>/documentListSet}"
                 alternateRowColors="true"
@@ -125,6 +143,7 @@
                         <SearchField
                             placeholder="{i18n>search---}"
                             width="15rem"
+                            liveChange="onTreeTableBasicSearch"
                         />
                         <Button
                             icon="sap-icon://sort"
