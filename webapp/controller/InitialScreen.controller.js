@@ -14,7 +14,7 @@ sap.ui.define(
     "sap/m/SearchField",
     "sap/m/Column",
     "sap/m/Text",
-    'sap/m/Token'
+    "sap/m/Token",
   ],
   function (
     BaseController,
@@ -267,12 +267,31 @@ sap.ui.define(
         },
         onFilterBarFilePathMultiInputChange: function (oEvent) {
           let oTokens = oEvent.getSource().getTokens(),
-          jsonModel = this.getModel("jsonModel");
-          if (oTokens.length > 0) {
-            jsonModel.setProperty("/filterInputConfigurations/secondFilterBarVisibility", true);
-            jsonModel.setProperty("/documentListSet", models._documentsListSet());
+            jsonModel = this.getModel("jsonModel");
+          if (oEvent.getParameter("type") === "removed") {
+            if (
+              oEvent.getParameter("removedTokens").length === oTokens.length
+            ) {
+              jsonModel.setProperty(
+                "/filterInputConfigurations/secondFilterBarVisibility",
+                false
+              );
+              jsonModel.setProperty("/documentListSet", []);
+
+              return;
+            }
           }
-        }
+          if (oTokens.length > 0) {
+            jsonModel.setProperty(
+              "/filterInputConfigurations/secondFilterBarVisibility",
+              true
+            );
+            jsonModel.setProperty(
+              "/documentListSet",
+              models._documentsListSet()
+            );
+          }
+        },
       }
     );
   }
