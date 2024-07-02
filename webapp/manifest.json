@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/sap/ZDA_FLIGHT_DEMO_SRV/",
+                "uri": "/sap/opu/odata/sap/ZUB_AI_GOOGLE_LLM/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],
