@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/sap/ZUB_AI_GOOGLE_LLM/",
+                "uri": "/sap/opu/odata/sap/ZUB_AI_GOOGLE_LLM_SRV",
                 "type": "OData",
                 "settings": {
                     "annotations": [],

@@ -35,6 +35,9 @@ server:
           - path: /sap
             url: https://vhuhauedci.sap.marturfompak.com:44300
             client: '500'
+          - path: /sap/opu/odata/sap/ZUB_AI_GOOGLE_LLM_SRV
+            url: https://vhuhauedci.sap.marturfompak.com:44300
+            client: '500'
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
