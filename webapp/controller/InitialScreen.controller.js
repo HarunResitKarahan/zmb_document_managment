@@ -41,11 +41,29 @@ sap.ui.define(
         formatter: formatter,
         models: models,
         onInit: function () {
+          var oRouter = this.getRouter();
+
+          oRouter.getRoute("initialScreen").attachMatched(this._onRouteMatched, this);
+
           var oFilePathMultiInput = this.getView().byId(
             "idFilterBarFilePathMultiInput"
           );
-
           oFilePathMultiInput.addValidator(this._filePathValidator.bind(this));
+        },
+
+        _onRouteMatched: function () {
+          let oModel = this.getOwnerComponent().getModel(),
+          sPath = "/getPersonalInfoSet(Pernr='')";
+
+          oModel.read(sPath, {
+            success: (oData, oResponse) => {
+              console.log(oData)
+            },
+            error: (oError) => {
+              console.log(oError)
+            }
+          })
+          debugger;
         },
         _openDialog: function (dialogName) {
           if (!this._oDialog) {
